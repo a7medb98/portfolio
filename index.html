@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ahmed Balhamar Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{obsidian:'#0B0F19',slate2:'#111827',line:'#1E293B',ink:'#F8FAFC',mute:'#94A3B8',cyan:'#06B6D4'},fontFamily:{sans:['Inter','system-ui','sans-serif'],mono:['"JetBrains Mono"','ui-monospace','monospace']}}}}
+</script>
+<style>
+/* VOICE: calm, precise, engineer-to-engineer; telemetry console rather than marketing page
+   IDEA: a live systems topology — field sensors feeding a gateway into a digital twin
+   PICTURE: hero SVG topology with packets travelling sensor → gateway → twin → ops
+   COLOUR and TYPE: obsidian #0B0F19, slate cards #111827, 1px #1E293B, off-white #F8FAFC, one cyan #06B6D4; Inter + JetBrains Mono
+   LAYOUT: sticky header, hero copy + topology, filterable case grid, three terminal boxes, credentials list, contact footer */
+:root{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:#0B0F19;color:#F8FAFC;font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{text-wrap:balance}
+.grid-bg{background-image:radial-gradient(rgba(148,163,184,.18) 1px,transparent 1px),linear-gradient(rgba(30,41,59,.55) 1px,transparent 1px),linear-gradient(90deg,rgba(30,41,59,.55) 1px,transparent 1px);background-size:24px 24px,96px 96px,96px 96px;background-position:0 0,-1px -1px,-1px -1px;-webkit-mask-image:radial-gradient(ellipse 90% 80% at 50% 30%,#000 40%,transparent 100%);mask-image:radial-gradient(ellipse 90% 80% at 50% 30%,#000 40%,transparent 100%)}
+.flow{stroke-dasharray:4 10;animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-28}}
+.pulse{animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35}}
+.card{transition:border-color .2s,transform .2s,background-color .2s}
+.card:hover{border-color:rgba(6,182,212,.55);transform:translateY(-2px)}
+:focus-visible{outline:2px solid #06B6D4;outline-offset:3px;border-radius:6px}
+.chip[aria-pressed=true]{background:#06B6D4;color:#0B0F19;border-color:#06B6D4}
+dialog::backdrop{background:rgba(3,6,12,.78);backdrop-filter:blur(4px)}
+dialog[open]{animation:pop .2s ease-out}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}}
+.term li::before{content:"› ";color:#06B6D4}
+@media (prefers-reduced-motion:reduce){.flow,.pulse,dialog[open]{animation:none}html{scroll-behavior:auto}.card:hover{transform:none}}
+</style>
+</head>
+<body class="font-sans antialiased">
+
+<!-- Header -->
+<header class="sticky top-0 z-40 border-b border-line bg-obsidian/85 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-2 px-4 py-3 sm:px-6">
+    <a href="#top" class="font-mono text-sm font-semibold tracking-tight text-ink">AHMED.BALHAMAR <span class="text-cyan">// SYS_ENG</span></a>
+    <nav class="order-3 flex w-full gap-1 overflow-x-auto text-sm text-mute md:order-none md:w-auto md:flex-1 md:justify-center" aria-label="Sections">
+      <a class="flex-none rounded-md px-3 py-2 hover:text-ink hover:bg-slate2" href="#architecture">Architecture</a>
+      <a class="flex-none rounded-md px-3 py-2 hover:text-ink hover:bg-slate2" href="#experience">Experience</a>
+      <a class="flex-none rounded-md px-3 py-2 hover:text-ink hover:bg-slate2" href="#stack">Stack &amp; Certs</a>
+      <a class="flex-none rounded-md px-3 py-2 hover:text-ink hover:bg-slate2" href="#contact">Contact</a>
+    </nav>
+    <span class="ml-auto inline-flex items-center gap-2 rounded-full border border-cyan/40 bg-cyan/10 px-3 py-1 font-mono text-xs text-cyan md:ml-0">
+      <span class="pulse h-2 w-2 rounded-full bg-cyan"></span>Available for AI / IoT / Infra Roles
+    </span>
+  </div>
+</header>
+
+<main id="top">
+<!-- Hero -->
+<section id="architecture" class="relative overflow-hidden border-b border-line">
+  <div class="grid-bg pointer-events-none absolute inset-0" aria-hidden="true"></div>
+  <div class="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]">
+    <div>
+      <p class="mb-5 inline-flex items-center gap-2 rounded-md border border-line bg-slate2 px-2.5 py-1 font-mono text-xs text-mute">
+        <span class="text-cyan">●</span> Dammam, KSA · UTC+3
+      </p>
+      <h1 class="text-[clamp(2rem,4.6vw,3.25rem)] font-extrabold leading-[1.06] tracking-tight">Bridging Physical Infrastructure, IoT Telemetry &amp; Intelligent Systems.</h1>
+      <p class="mt-6 max-w-xl text-[17px] text-mute">Computer Science graduate and Project &amp; IT Systems Specialist based in Dammam, Saudi Arabia. 3+ years delivering enterprise IT infrastructure, industrial digital twins, and end-to-end technical deployments.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#experience" class="inline-flex min-h-[44px] items-center gap-2 rounded-lg bg-cyan px-5 font-semibold text-obsidian hover:bg-cyan/90">Explore Systems &amp; Projects <span aria-hidden="true">→</span></a>
+        <button type="button" data-copy class="inline-flex min-h-[44px] items-center gap-2 rounded-lg border border-line bg-slate2 px-5 font-medium text-ink hover:border-cyan/60">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+          <span data-copy-label>Copy Email</span>
+        </button>
+        <a href="https://github.com/a7medb98" target="_blank" rel="noopener" class="inline-flex min-h-[44px] items-center gap-2 rounded-lg px-3 font-medium text-mute hover:text-ink">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+          GitHub
+        </a>
+      </div>
+      <dl class="mt-10 grid max-w-lg grid-cols-3 gap-px overflow-hidden rounded-xl border border-line bg-line">
+        <div class="bg-slate2 p-4"><dt class="font-mono text-[11px] text-mute">experience</dt><dd class="font-mono text-2xl font-semibold">3<span class="text-cyan">+</span> yrs</dd></div>
+        <div class="bg-slate2 p-4"><dt class="font-mono text-[11px] text-mute">ad_users</dt><dd class="font-mono text-2xl font-semibold">200<span class="text-cyan">+</span></dd></div>
+        <div class="bg-slate2 p-4"><dt class="font-mono text-[11px] text-mute">sectors</dt><dd class="font-mono text-2xl font-semibold">3</dd></div>
+      </dl>
+    </div>
+
+    <!-- Topology picture -->
+    <figure class="rounded-2xl border border-line bg-slate2/80 p-3 shadow-2xl shadow-cyan/5">
+      <div class="flex items-center justify-between border-b border-line px-2 pb-2 font-mono text-[11px] text-mute">
+        <span>topology://field → twin → ops</span><span class="text-cyan">LIVE</span>
+      </div>
+      <svg viewBox="0 0 520 330" class="block h-auto w-full" role="img" aria-label="System topology: field sensors and worker tags feed an IoT gateway, which syncs to a digital twin and an operations dashboard">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1E293B"/><stop offset="1" stop-color="#0F172A"/></linearGradient>
+          <linearGradient id="gc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#06B6D4" stop-opacity=".35"/><stop offset="1" stop-color="#06B6D4" stop-opacity=".05"/></linearGradient>
+          <g id="node"><rect x="-46" y="-20" width="92" height="40" rx="8" fill="url(#g1)" stroke="#334155"/><circle cx="-32" cy="0" r="4" fill="#06B6D4" class="pulse"/></g>
+        </defs>
+        <!-- links -->
+        <g fill="none" stroke="#334155" stroke-width="1.5">
+          <path d="M106 60 C160 60 160 150 200 150"/><path d="M106 150 H200"/><path d="M106 240 C160 240 160 150 200 150"/>
+          <path d="M300 150 H350"/><path d="M450 120 V80"/><path d="M450 180 V232"/>
+        </g>
+        <g fill="none" stroke="#06B6D4" stroke-width="2" class="flow">
+          <path d="M106 60 C160 60 160 150 200 150"/><path d="M106 150 H200"/><path d="M106 240 C160 240 160 150 200 150"/>
+          <path d="M300 150 H350"/><path d="M450 120 V80"/><path d="M450 180 V232"/>
+        </g>
+        <!-- field nodes -->
+        <use href="#node" x="60" y="60"/><use href="#node" x="60" y="150"/><use href="#node" x="60" y="240"/>
+        <g font-family="JetBrains Mono,monospace" font-size="10" fill="#CBD5E1">
+          <text x="36" y="64">worker_tag</text><text x="36" y="154">asset_rfid</text><text x="36" y="244">env_sensor</text>
+        </g>
+        <!-- gateway -->
+        <rect x="200" y="118" width="100" height="64" rx="10" fill="url(#g1)" stroke="#06B6D4" stroke-opacity=".6"/>
+        <g fill="#06B6D4"><rect x="214" y="160" width="6" height="10" rx="1"/><rect x="224" y="156" width="6" height="14" rx="1"/><rect x="234" y="152" width="6" height="18" rx="1"/></g>
+        <text x="214" y="142" font-family="JetBrains Mono,monospace" font-size="11" fill="#F8FAFC">iot_gateway</text>
+        <!-- twin: isometric block -->
+        <g transform="translate(450 150)">
+          <path d="M0 -30 L52 -4 L0 22 L-52 -4 Z" fill="url(#gc)" stroke="#06B6D4"/>
+          <path d="M-52 -4 L0 22 L0 40 L-52 14 Z" fill="#0F172A" stroke="#334155"/>
+          <path d="M52 -4 L0 22 L0 40 L52 14 Z" fill="#1E293B" stroke="#334155"/>
+          <path d="M-26 -17 L26 9 M26 -17 L-26 9" stroke="#06B6D4" stroke-opacity=".35"/>
+          <text x="0" y="-36" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#F8FAFC">digital_twin</text>
+        </g>
+        <!-- SPF / doc store -->
+        <g transform="translate(450 58)">
+          <rect x="-56" y="-22" width="112" height="44" rx="8" fill="url(#g1)" stroke="#334155"/>
+          <text x="0" y="-2" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#CBD5E1">SDx / SPF</text>
+          <text x="0" y="12" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#64748B">2D · 3D data</text>
+        </g>
+        <!-- ops dashboard -->
+        <g transform="translate(450 262)">
+          <rect x="-56" y="-30" width="112" height="60" rx="8" fill="url(#g1)" stroke="#334155"/>
+          <text x="-44" y="-12" font-family="JetBrains Mono,monospace" font-size="10" fill="#CBD5E1">ops_dash</text>
+          <polyline points="-44,18 -30,8 -18,12 -4,-2 10,4 24,-6 44,0" fill="none" stroke="#06B6D4" stroke-width="2"/>
+        </g>
+      </svg>
+      <div class="grid grid-cols-3 gap-px overflow-hidden rounded-lg border border-line bg-line font-mono text-xs">
+        <div class="bg-obsidian p-2.5"><div class="text-mute">nodes_online</div><div id="m-nodes" class="text-base text-ink">128</div></div>
+        <div class="bg-obsidian p-2.5"><div class="text-mute">latency_ms</div><div id="m-lat" class="text-base text-ink">42</div></div>
+        <div class="bg-obsidian p-2.5"><div class="text-mute">twin_sync</div><div id="m-sync" class="text-base text-cyan">99.2%</div></div>
+      </div>
+      <figcaption class="px-1 pt-2 text-[13px] text-slate-500">Illustrative readout of the kind of pipeline Ahmed supports, not live client data.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Case studies -->
+<section id="experience" class="border-b border-line">
+  <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div>
+        <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Selected work</h2>
+        <p class="mt-2 max-w-xl text-mute">Three deployments across energy, hospitality and enterprise IT. Open any card for the technical breakdown.</p>
+      </div>
+      <div class="flex flex-wrap gap-2" role="group" aria-label="Filter projects">
+        <button type="button" class="chip min-h-[40px] rounded-full border border-line bg-slate2 px-4 font-mono text-xs text-mute hover:text-ink" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="chip min-h-[40px] rounded-full border border-line bg-slate2 px-4 font-mono text-xs text-mute hover:text-ink" data-filter="iot" aria-pressed="false">IoT &amp; Digital Twins</button>
+        <button type="button" class="chip min-h-[40px] rounded-full border border-line bg-slate2 px-4 font-mono text-xs text-mute hover:text-ink" data-filter="infra" aria-pressed="false">Infrastructure &amp; Ops</button>
+      </div>
+    </div>
+    <div id="cases" class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3"></div>
+    <p id="empty" class="mt-8 hidden text-mute">No projects in this category.</p>
+  </div>
+</section>
+
+<!-- Stack & certs -->
+<section id="stack" class="border-b border-line">
+  <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
+    <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Technical stack &amp; credentials</h2>
+    <p class="mt-2 max-w-xl text-mute">Grouped the way the work actually happens: data and devices, the network underneath, and the delivery that ties them together.</p>
+    <div id="stackGrid" class="mt-10 grid gap-5 md:grid-cols-3"></div>
+
+    <div class="mt-12 rounded-2xl border border-line bg-slate2">
+      <div class="flex items-center justify-between border-b border-line px-5 py-3">
+        <h3 class="font-semibold">Education &amp; certifications</h3>
+        <span class="font-mono text-xs text-mute" id="certCount"></span>
+      </div>
+      <ul id="certs" class="divide-y divide-line"></ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Contact footer -->
+<footer id="contact" class="relative overflow-hidden">
+  <div class="grid-bg pointer-events-none absolute inset-0 opacity-60" aria-hidden="true"></div>
+  <div class="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
+    <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Open a channel.</h2>
+    <p class="mt-2 max-w-xl text-mute">Looking for roles across AI, IoT and infrastructure in Saudi Arabia and the GCC. Email is the fastest route.</p>
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
+      <div class="rounded-xl border border-line bg-slate2 p-5 lg:col-span-2">
+        <div class="font-mono text-xs text-mute">location</div>
+        <div class="mt-1 font-medium">Dammam, Saudi Arabia</div>
+      </div>
+      <div class="rounded-xl border border-line bg-slate2 p-5 lg:col-span-2">
+        <div class="font-mono text-xs text-mute">phone</div>
+        <a href="tel:+966505819516" class="mt-1 block whitespace-nowrap font-mono font-medium hover:text-cyan">+966 50 581 9516</a>
+      </div>
+      <button type="button" data-copy class="card rounded-xl border border-line bg-slate2 p-5 text-left sm:col-span-2 lg:col-span-2">
+        <div class="flex items-center justify-between font-mono text-xs text-mute"><span>email</span><span data-copy-label class="text-cyan">click to copy</span></div>
+        <div class="mt-1 break-all font-medium">AhmedBalhamar3@gmail.com</div>
+      </button>
+      <a href="https://www.linkedin.com/in/ahmed-m-balhamar-901375195/" target="_blank" rel="noopener" class="card rounded-xl border border-line bg-slate2 p-5 lg:col-span-3">
+        <div class="flex items-center justify-between font-mono text-xs text-mute"><span>linkedin</span><span class="text-cyan">↗</span></div>
+        <div class="mt-1 font-medium">in/ahmed-m-balhamar</div>
+      </a>
+      <a href="https://github.com/a7medb98" target="_blank" rel="noopener" class="card rounded-xl border border-line bg-slate2 p-5 sm:col-span-2 lg:col-span-3">
+        <div class="flex items-center justify-between font-mono text-xs text-mute"><span>github</span><span class="text-cyan">↗</span></div>
+        <div class="mt-1 font-medium">github.com/a7medb98</div>
+      </a>
+    </div>
+    <div class="mt-14 flex flex-wrap justify-between gap-3 border-t border-line pt-6 font-mono text-xs text-slate-500">
+      <span>© <span id="yr"></span> Ahmed Balhamar</span>
+      <span>AHMED.BALHAMAR // SYS_ENG · status: <span class="text-cyan">online</span></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Modal -->
+<dialog id="modal" class="m-auto w-[min(680px,calc(100vw-24px))] rounded-2xl border border-line bg-slate2 p-0 text-ink" aria-labelledby="mTitle">
+  <div class="flex items-start justify-between gap-4 border-b border-line p-5 sm:p-6">
+    <div>
+      <div id="mTags" class="flex flex-wrap gap-2"></div>
+      <h3 id="mTitle" class="mt-3 text-2xl font-bold leading-tight"></h3>
+      <p id="mOrg" class="mt-1 text-sm text-mute"></p>
+    </div>
+    <button type="button" id="mClose" class="grid h-11 w-11 flex-none place-items-center rounded-lg border border-line text-mute hover:text-ink" aria-label="Close">✕</button>
+  </div>
+  <div class="max-h-[60vh] overflow-y-auto p-5 sm:p-6">
+    <p id="mSum" class="text-mute"></p>
+    <h4 class="mt-6 font-mono text-xs text-cyan">technical_breakdown</h4>
+    <ul id="mList" class="term mt-3 space-y-3 text-[15px]"></ul>
+    <h4 class="mt-6 font-mono text-xs text-cyan">tools_and_scope</h4>
+    <div id="mStack" class="mt-3 flex flex-wrap gap-2"></div>
+  </div>
+</dialog>
+
+<!-- Toast -->
+<div id="toast" role="status" aria-live="polite" class="pointer-events-none fixed bottom-5 left-1/2 z-50 -translate-x-1/2 translate-y-4 rounded-lg border border-cyan/50 bg-obsidian px-4 py-2.5 font-mono text-sm opacity-0 shadow-lg transition"></div>
+
+<script>
+{
+const EMAIL='AhmedBalhamar3@gmail.com';
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const tag=t=>`<span class="rounded-md border border-line bg-obsidian px-2 py-0.5 font-mono text-[11px] text-mute">${esc(t)}</span>`;
+
+const CASES=[
+ {id:'twin',cat:'iot',label:'IoT & Digital Twins',title:'Industrial Digital Twin & IoT Asset Tracking',org:'Lamprell — Aramco Projects',
+  sum:'Managed the engineering data backbone behind an industrial digital twin, and supported IoT safety platforms that track workers and assets across offshore and industrial sites.',
+  tags:['Hexagon SDx','SmartPlant Foundation','IoT Safety'],
+  points:['Managed 2D and 3D engineering data pipelines in Hexagon SDx and SmartPlant Foundation, keeping drawings, models and tag data aligned for the digital twin.',
+   'Maintained data integrity between design deliverables and the asset register so the twin reflected as-built conditions.',
+   'Supported IoT safety platforms that track the location of workers and assets in offshore and industrial environments.',
+   'Worked with engineering and operations teams to troubleshoot device connectivity and data gaps in harsh, remote conditions.',
+   'Followed corporate IT security practices for handling project data on Aramco-related work.'],
+  stack:['Hexagon SDx','SmartPlant Foundation','2D/3D Data','Worker & Asset Tracking','Offshore Ops']},
+ {id:'hotel',cat:'infra',label:'Infrastructure & Ops',title:'Hospitality Tech & Smart Infrastructure Deployment',org:'Bella Mar Hotel Apartments — Jubail',
+  sum:'Led the technical side of a hotel apartment project end to end, from bills of quantities through vendor delivery and regulatory sign-off.',
+  tags:['BOQ / RFQ','MEP Vendors','Royal Commission'],
+  points:['Ran full-lifecycle technical procurement: prepared BOQs, issued RFQs, compared bids and recommended vendors.',
+   'Managed MEP vendors and contractors, tracking scope, schedule and quality through installation and handover.',
+   'Coordinated IT, network and smart building systems so they fit the property\'s operations from day one.',
+   'Prepared documentation and coordinated inspections to meet Royal Commission for Jubail regulatory requirements.',
+   'Acted as the single technical point of contact between ownership, consultants and suppliers.'],
+  stack:['BOQ','RFQ','MEP','Vendor Management','Royal Commission Compliance','Smart Infrastructure']},
+ {id:'net',cat:'infra',label:'Infrastructure & Ops',title:'Enterprise Network & Active Directory Operations',org:'Salem Balhamar Holding',
+  sum:'Ran day-to-day network and identity operations for a multi-business holding group of 200+ users.',
+  tags:['Networking','Firewalls','Active Directory'],
+  points:['Managed routers, switches and firewalls across the group\'s network, handling configuration, monitoring and troubleshooting.',
+   'Administered Active Directory for 200+ users: accounts, groups, permissions and access policies.',
+   'Applied security controls on identity and network access to reduce exposure and keep access least-privilege.',
+   'Handled user support and incident resolution to keep business operations running.',
+   'Documented infrastructure so changes and handovers stayed predictable.'],
+  stack:['Routers','Switches','Firewalls','Active Directory','IT Security','200+ users']}
+];
+
+const STACK=[
+ {f:'ai_data_iot.sh',t:'AI, Data & IoT',items:['Python','Power BI','IoT Systems','Digital Twins / Hexagon SDx']},
+ {f:'infra_security.sh',t:'Infrastructure & Security',items:['Networking','Firewalls / Switches','Active Directory','IT Security']},
+ {f:'project_exec.sh',t:'Project Execution',items:['BOQ / RFQ Procurement','Vendor Management','Royal Commission Compliance']}
+];
+
+const CERTS=[
+ {n:'BSc Computer Science',o:'University of Liverpool',k:'degree'},
+ {n:'Internet of Things & Maintenance of Smart Devices',o:'King Khalid Foundation',y:'2026',k:'cert'},
+ {n:'Generative AI Essentials',o:'IBM',k:'cert'},
+ {n:'Introduction to AI',o:'IBM',k:'cert'},
+ {n:'IT Security',o:'Lamprell',k:'cert'},
+ {n:'Power BI Data Analyst',o:'',k:'cert'}
+];
+
+/* Cases */
+const grid=document.getElementById('cases');
+grid.innerHTML=CASES.map((c,i)=>`
+ <button type="button" data-id="${c.id}" data-cat="${c.cat}" class="card group flex h-full flex-col rounded-2xl border border-line bg-slate2 p-6 text-left">
+  <div class="flex items-center justify-between font-mono text-[11px] text-mute"><span>case_0${i+1}</span><span class="text-cyan">${esc(c.label)}</span></div>
+  <h3 class="mt-4 text-xl font-semibold leading-snug">${esc(c.title)}</h3>
+  <p class="mt-1 text-sm text-mute">${esc(c.org)}</p>
+  <p class="mt-4 flex-1 text-[15px] text-slate-300">${esc(c.sum)}</p>
+  <div class="mt-5 flex flex-wrap gap-2">${c.tags.map(tag).join('')}</div>
+  <span class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-cyan">View technical details <span class="transition group-hover:translate-x-1" aria-hidden="true">→</span></span>
+ </button>`).join('');
+
+const chips=[...document.querySelectorAll('.chip')];
+const empty=document.getElementById('empty');
+chips.forEach(b=>b.addEventListener('click',()=>{
+  const f=b.dataset.filter;let n=0;
+  chips.forEach(x=>x.setAttribute('aria-pressed',x===b));
+  grid.querySelectorAll('[data-cat]').forEach(el=>{const on=f==='all'||el.dataset.cat===f;el.hidden=!on;if(on)n++});
+  empty.classList.toggle('hidden',n>0);
+}));
+
+/* Modal */
+const dlg=document.getElementById('modal');
+let lastFocus=null;
+grid.addEventListener('click',e=>{
+  const b=e.target.closest('[data-id]');if(!b)return;
+  const c=CASES.find(x=>x.id===b.dataset.id);lastFocus=b;
+  document.getElementById('mTitle').textContent=c.title;
+  document.getElementById('mOrg').textContent=c.org;
+  document.getElementById('mSum').textContent=c.sum;
+  document.getElementById('mTags').innerHTML=`<span class="rounded-md bg-cyan/15 px-2 py-0.5 font-mono text-[11px] text-cyan">${esc(c.label)}</span>`;
+  document.getElementById('mList').innerHTML=c.points.map(p=>`<li>${esc(p)}</li>`).join('');
+  document.getElementById('mStack').innerHTML=c.stack.map(tag).join('');
+  if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');
+  document.body.style.overflow='hidden';
+});
+const closeM=()=>{dlg.open&&dlg.close?dlg.close():dlg.removeAttribute('open')};
+document.getElementById('mClose').addEventListener('click',closeM);
+dlg.addEventListener('click',e=>{if(e.target===dlg)closeM()});
+dlg.addEventListener('close',()=>{document.body.style.overflow='';lastFocus&&lastFocus.focus()});
+
+/* Stack */
+document.getElementById('stackGrid').innerHTML=STACK.map(s=>`
+ <div class="term overflow-hidden rounded-2xl border border-line bg-slate2">
+  <div class="flex items-center gap-1.5 border-b border-line bg-obsidian/60 px-4 py-2.5">
+   <span class="h-2.5 w-2.5 rounded-full bg-slate-600"></span><span class="h-2.5 w-2.5 rounded-full bg-slate-600"></span><span class="h-2.5 w-2.5 rounded-full bg-cyan/70"></span>
+   <span class="ml-2 truncate font-mono text-xs text-mute">~/${esc(s.f)}</span>
+  </div>
+  <div class="p-5 font-mono text-sm">
+   <div class="text-mute"><span class="text-cyan">$</span> ls skills/</div>
+   <h3 class="mt-3 font-sans text-lg font-semibold">${esc(s.t)}</h3>
+   <ul class="mt-3 space-y-2 text-slate-200">${s.items.map(i=>`<li>${esc(i)}</li>`).join('')}</ul>
+  </div>
+ </div>`).join('');
+
+/* Certs */
+document.getElementById('certs').innerHTML=CERTS.map(c=>`
+ <li class="flex flex-wrap items-center gap-x-4 gap-y-1 px-5 py-4">
+  <span class="w-16 flex-none rounded-md border ${c.k==='degree'?'border-cyan/50 text-cyan':'border-line text-mute'} px-2 py-0.5 text-center font-mono text-[11px]">${c.k==='degree'?'DEGREE':'CERT'}</span>
+  <span class="flex-1 font-medium">${esc(c.n)}</span>
+  <span class="text-sm text-mute">${esc(c.o)}${c.y?` · <span class="font-mono">${esc(c.y)}</span>`:''}</span>
+ </li>`).join('');
+document.getElementById('certCount').textContent=`${CERTS.length} records`;
+
+/* Copy email */
+const toast=document.getElementById('toast');let tt;
+const show=(msg)=>{toast.textContent=msg;toast.classList.remove('opacity-0','translate-y-4');clearTimeout(tt);tt=setTimeout(()=>toast.classList.add('opacity-0','translate-y-4'),2400)};
+const fallbackCopy=()=>{const t=document.createElement('textarea');t.value=EMAIL;t.setAttribute('readonly','');t.style.cssText='position:fixed;opacity:0';document.body.appendChild(t);t.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}t.remove();return ok};
+document.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('click',async()=>{
+  const lab=btn.querySelector('[data-copy-label]'),orig=lab.textContent;let ok=false;
+  try{await navigator.clipboard.writeText(EMAIL);ok=true}catch(e){ok=fallbackCopy()}
+  if(ok){lab.textContent='Copied ✓';show('✓ '+EMAIL+' copied')}else{show('Email: '+EMAIL)}
+  setTimeout(()=>lab.textContent=orig,2000);
+}));
+
+/* Illustrative telemetry ticker */
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const mN=document.getElementById('m-nodes'),mL=document.getElementById('m-lat'),mS=document.getElementById('m-sync');
+if(!reduce)setInterval(()=>{
+  mN.textContent=124+Math.floor(Math.random()*8);
+  mL.textContent=34+Math.floor(Math.random()*18);
+  mS.textContent=(98.6+Math.random()*1.2).toFixed(1)+'%';
+},1800);
+
+document.getElementById('yr').textContent=new Date().getFullYear();
+}
+</script>
+</body>
+</html>
